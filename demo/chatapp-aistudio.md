@@ -110,7 +110,7 @@ Azure Open AI Embedding Name : text-embedding-ada-002
 Web App Enable Chat History  : true
 
 
-
+### 6. Enable Authentication of your App service 
 
 1. Create app registration
 
@@ -129,5 +129,6 @@ https://learn.microsoft.com/en-us/azure/app-service/scenario-secure-app-authenti
 
 Add "identity" in new create App Service
 
+3. Wathc Cosmos DB chat history 
 
 
