@@ -9,12 +9,12 @@ https://learn.microsoft.com/en-us/azure/ai-studio/tutorials/deploy-chat-web-app
 ## 4. Deploy your web app.
 
 
-1. Open Azure Portal 
+### 1. Open Azure Portal 
 
 Create resource group : phil-ai-02 
     location : EASTUS 2 
 
-2. Open AI Studio Portal 
+### 2. Open AI Studio Portal 
 
 https://ai.azure.com/
 login in with same Azure account / password 
@@ -44,7 +44,7 @@ Create new Deployment :
     Open in Playground
     
 
-3-1. Open Chat in AI Studio Playground 
+### 3-1. Open Chat in AI Studio Playground 
 
 
 Download all product info data in : 
@@ -57,13 +57,14 @@ Choose "Create a new AI Search resource"
 After creation, choose "Connect to other AI search resource
 Input index name "product-info-2"
 
-4-1 Create proper role assignment before deploy to Web
+### 4-1 Create proper role assignment before deploy to Web
 
 Enable "identity" in ai service, ai search, and 
 enable "API Access control" as "both" in ai search 
 
 
 https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/use-your-data-securely#role-assignments
+
 
 
 1. Azure AI search -> Access control -> Add role assignment 
@@ -73,7 +74,7 @@ https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/use-your-data-
 
 
 
-4-2 . Deploy as a web app 
+### 4-2 . Deploy as a web app 
 
 Create a new resource group 
 
@@ -89,17 +90,45 @@ https://learn.microsoft.com/en-us/answers/questions/2036599/azure-openai-webapp-
 
 
 
+### 5. Create web app from one click sample 
 
-3. Open Azure Portal, in previous resource group 
+Create web app follow "deploy" button in below link 
 
-Create "storage account" philaoaiblob02
+https://github.com/microsoft/sample-app-aoai-chatGPT?tab=readme-ov-file#one-click-azure-deployment
 
-    Choose "Azure Blob Storage or Azure Data Lake Storage Gen 2" 
-    workload : "Other" 
-    Redundancy : "LRS" 
+
+Azure Search Service : phil-aisearch-02018032638575
+Azure Search Index : hr-faq-index
+
+Azure Search Key :　
+Azure Open AI Resource : ai-philaihub02018032638575
+Azure Open AI Model : gpt-4o
+
+Azure Open AI Model Name：empty 
+Azure Open AI Key : 
+
+Azure Open AI Embedding Name : text-embedding-ada-002
+Web App Enable Chat History  : true
+
+
+
+
+1. Create app registration
+
+Azure Portal >> Entra >> App registration >> 
+
+This tenant login only 
+Add client secret 
+Add redirect web url as App service url 
+
+    https://phil-ai01-web.azurewebsites.net/.auth/login/aad/callback
     
-    Review + Create 
 
-Create new Containers inside Azure Portal 
-    "aistudiocontainer02"
+2. Enable authentication 
+
+https://learn.microsoft.com/en-us/azure/app-service/scenario-secure-app-authentication-app-service?tabs=workforce-configuration#3-configure-authentication-and-authorization
+
+Add "identity" in new create App Service
+
+
 
