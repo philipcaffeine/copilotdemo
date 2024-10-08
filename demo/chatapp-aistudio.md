@@ -1,18 +1,19 @@
 
 # Create enterprise chat app with your data 
 
+Refer to below tutorial in AI Studio 
 https://learn.microsoft.com/en-us/azure/ai-studio/tutorials/deploy-chat-web-app
 
-## 1. Deploy and test a chat model without your data.
-## 2. Add your data.
-## 3. Test the model with your data.
-## 4. Deploy your web app.
+
 
 
 ### 1. Open Azure Portal 
 
+https://ms.portal.azure.com/#home
+
 Create resource group : phil-ai-02 
     location : EASTUS 2 
+
 
 ### 2. Open AI Studio Portal 
 
@@ -37,6 +38,7 @@ Name: ai-phil-aihub02
 AI Search
 Name: phil-aisearch-02
 
+
 Create new Deployment : 
     Deploy base model : gpt-4o
     Increase token limit 
@@ -50,6 +52,7 @@ Create new Deployment :
 Download all product info data in : 
 https://github.com/philipcaffeine/copilotdemo/tree/main/data/aistudio-dataset/product-info
 
+
 Choose "Add your data" 
 Upload all the "product-infox.md" 
 Choose "Create a new AI Search resource" 
@@ -57,21 +60,18 @@ Choose "Create a new AI Search resource"
 After creation, choose "Connect to other AI search resource
 Input index name "product-info-2"
 
+
 ### 4-1 Create proper role assignment before deploy to Web
 
-Enable "identity" in ai service, ai search, and 
-enable "API Access control" as "both" in ai search 
-
+Enable "Identity" in created AI service, AI search, and enable "API Access control" as "both" in AI Search 
 
 https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/use-your-data-securely#role-assignments
-
 
 
 1. Azure AI search -> Access control -> Add role assignment 
  -> managed identify -> AI service 
 
 2. enable System assigned identities in AI service "identity"
-
 
 
 ### 4-2 . Deploy as a web app 
@@ -84,7 +84,6 @@ location : EAST US 2
 pricing plan : Standard (S1)
 
 Note: Check "Enable chat history in the web app" 
-
 
 https://learn.microsoft.com/en-us/answers/questions/2036599/azure-openai-webapp-deploy-failed
 
@@ -122,7 +121,7 @@ Add client secret
 Add redirect web url as App service url 
 
     https://phil-ai01-web.azurewebsites.net/.auth/login/aad/callback
-    
+
 
 2. Enable authentication 
 
