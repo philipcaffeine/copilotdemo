@@ -68,11 +68,11 @@ https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/use-your-data-
 2. enable System assigned identities in AI service "identity"
 
 
-## 4. Deploy as a web app (using step 5. as workaround for now)
+## 4. Deploy as a web app from AI Studio Chat 
 
 Create a new resource group 
 
-name: phil-aistudio-web02
+name: "phil-aistudio-web02"
 resource group : the group you created
 location : EAST US 2 
 pricing plan : Standard (S1)
@@ -86,7 +86,7 @@ https://learn.microsoft.com/en-us/answers/questions/2099867/azure-ai-studio-depl
 
 
 
-## 5. Create web app from one click sample 
+## 5. Create web app from one click sample (skip this workaround, the product issue has been fixed)
 
 Create web app follow "deploy" button in below link 
 
@@ -109,7 +109,7 @@ Azure Open AI Embedding Name : text-embedding-ada-002
 Web App Enable Chat History  : true
 
 
-## 6. Enable Authentication of your App service 
+## 6. Enable Authentication of your App service  (skip this workaround, the product issue has been fixed)
 
 ### 1. Create app registration
 
