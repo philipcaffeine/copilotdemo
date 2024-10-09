@@ -19,7 +19,7 @@ data download link:　https://github.com/philipcaffeine/copilotdemo/tree/main/da
 
 ## Sample prompt for "HR FAQ" dataset 
 
-data download link: 
+data download link: https://github.com/philipcaffeine/copilotdemo/blob/main/data/aistudio-dataset/HR/hr-faq-dataset.txt
 
 1. 同事的爸爸過世，同事今年年資3年，請問可以請幾天假?
 
@@ -30,7 +30,6 @@ data download link:
 同事的舅舅過世，同事今年年資3年，請問可以請幾天假?
 
 > 根據台灣勞動基準法，員工的舅舅過世並不屬於勞基法規定的親屬喪假範圍內。因此，同事無法根據勞基法申請喪假，但可以考慮申請事假或特別休假（特休）來處理相關事宜 。
-
 
 3. 同事的姊姊過世，同事今年年資3年，請問可以請幾天假?
 > 同事的姊姊過世，同事今年年資3年，請問可以請幾天假?

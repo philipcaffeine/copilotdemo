@@ -5,24 +5,24 @@ Refer to below tutorial in AI Studio
 https://learn.microsoft.com/en-us/azure/ai-studio/tutorials/deploy-chat-web-app
 
 
-
-
-### 1. Open Azure Portal 
+## 1. Open Azure Portal 
 
 https://ms.portal.azure.com/#home
 
-Create resource group : phil-ai-02 
+Create resource group : "phil-ai-02" 
     location : EASTUS 2 
 
 
-### 2. Open AI Studio Portal 
+## 2. Open Azure AI Studio Portal 
 
-https://ai.azure.com/
-login in with same Azure account / password 
+https://ai.azure.com/ 
 
-Create new project:  phil-aiproject-02
+Login in with same Azure account / password 
 
+Create new project:  "phil-aiproject-02"
 Choosse "Customize"
+
+### Below is only for reference, you can have your own naming : 
 
 Hub
 Name: phil-aihub02
@@ -39,42 +39,36 @@ AI Search
 Name: phil-aisearch-02
 
 
-Create new Deployment : 
+###　Create new model Deployment : 
     Deploy base model : gpt-4o
     Increase token limit 
-
     Open in Playground
     
 
-### 3-1. Open Chat in AI Studio Playground 
-
+## 3. Open Chat in AI Studio Playground 
 
 Download all product info data in : 
 https://github.com/philipcaffeine/copilotdemo/tree/main/data/aistudio-dataset/product-info
 
-
 Choose "Add your data" 
-Upload all the "product-infox.md" 
-Choose "Create a new AI Search resource" 
+Upload all the "product-info_X.md" 
+Choose "Connect to a AI Search resource" 
 
 After creation, choose "Connect to other AI search resource
-Input index name "product-info-2"
+Input index name "product-info"
 
 
-### 4-1 Create proper role assignment before deploy to Web
+## (skip) 4. Create proper role assignment before deploy to Web
 
-Enable "Identity" in created AI service, AI search, and enable "API Access control" as "both" in AI Search 
+### Enable "Identity" in created AI service, AI search, and enable "API Access control" as "both" in AI Search 
 
 https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/use-your-data-securely#role-assignments
 
-
-1. Azure AI search -> Access control -> Add role assignment 
- -> managed identify -> AI service 
-
+1. Azure AI search -> Access control -> Add role assignment  -> managed identity -> AI service 
 2. enable System assigned identities in AI service "identity"
 
 
-### 4-2 . Deploy as a web app 
+## 4. Deploy as a web app (using step 5. as workaround for now)
 
 Create a new resource group 
 
@@ -83,18 +77,23 @@ resource group : the group you created
 location : EAST US 2 
 pricing plan : Standard (S1)
 
-Note: Check "Enable chat history in the web app" 
+Note: Check "Enable chat history in the web app" to create Cosmos DB 
 
+Note: One click deploy chat web app is currently failed with some issue 
 https://learn.microsoft.com/en-us/answers/questions/2036599/azure-openai-webapp-deploy-failed
 
+https://learn.microsoft.com/en-us/answers/questions/2099867/azure-ai-studio-deploy-chat-webapp-failed?comment=question#newest-question-comment
 
 
-### 5. Create web app from one click sample 
+
+## 5. Create web app from one click sample 
 
 Create web app follow "deploy" button in below link 
 
 https://github.com/microsoft/sample-app-aoai-chatGPT?tab=readme-ov-file#one-click-azure-deployment
 
+
+### Input below columns in deployment GUI
 
 Azure Search Service : phil-aisearch-02018032638575
 Azure Search Index : hr-faq-index
@@ -110,7 +109,7 @@ Azure Open AI Embedding Name : text-embedding-ada-002
 Web App Enable Chat History  : true
 
 
-### 6. Enable Authentication of your App service 
+## 6. Enable Authentication of your App service 
 
 1. Create app registration
 
@@ -120,7 +119,10 @@ This tenant login only
 Add client secret 
 Add redirect web url as App service url 
 
-    https://phil-ai01-web.azurewebsites.net/.auth/login/aad/callback
+    https://your_app_service_name.azurewebsites.net/.auth/login/aad/callback
+
+Check "Implicit grant and hybrid flows" > "ID tokens (used for implicit and hybrid flows)"
+
 
 
 2. Enable authentication 
