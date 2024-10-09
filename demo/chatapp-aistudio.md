@@ -111,9 +111,9 @@ Web App Enable Chat History  : true
 
 ## 6. Enable Authentication of your App service 
 
-1. Create app registration
+### 1. Create app registration
 
-Azure Portal >> Entra >> App registration >> 
+Azure Portal >> Entra >> App registration >> Create new >> 
 
 This tenant login only 
 Add client secret 
@@ -123,14 +123,18 @@ Add redirect web url as App service url
 
 Check "Implicit grant and hybrid flows" > "ID tokens (used for implicit and hybrid flows)"
 
+Keep below info: 
 
+Application (client) ID
+Secret ID
 
-2. Enable authentication 
+### 2. Enable authentication 
 
+Follow below link to enable chat app authentication 
 https://learn.microsoft.com/en-us/azure/app-service/scenario-secure-app-authentication-app-service?tabs=workforce-configuration#3-configure-authentication-and-authorization
 
 Add "identity" in new create App Service
 
-3. Wathc Cosmos DB chat history 
+### 3. [Azure Portal]Using Data Explore in Cosmos DB account to watch chat history 
 
 
